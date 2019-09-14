@@ -17,18 +17,31 @@ class Landing extends Component {
         className="landingPage"
         style={{ width: window.innerWidth, height: window.innerHeight }}
       >
-        <p style={{ width: "50%", height: "50%", color: "white" }}>
-          paper piano
-        </p>
-
-        <img
-          src={logo}
-          style={{
-            width: "60%",
-            height: "95%",
-            border: "none"
-          }}
-        />
+        {/* <Grid item md={6}>
+          <p
+            style={{
+              width: "80%",
+              height: "100%",
+              display: "center",
+              color: "white"
+            }}
+          >
+            paper piano
+          </p>
+        </Grid> */}
+        <Grid item md={6}>
+          <img
+            src={logo}
+            style={{
+              width: "40%",
+              height: "70%",
+              border: "none",
+              position: "absolute",
+              bottom: 0,
+              right: 20
+            }}
+          />
+        </Grid>
 
         {/* {!this.state.render ? (
           <Grid container style={{ marginTop: "10%" }}>
@@ -36,17 +49,6 @@ class Landing extends Component {
             <Grid item md={7}>
             </Grid>
             <Grid item md={3}>
-              <Grid item md={12}>
-                This is just some random information about our website
-                <br />
-                <br />
-                -You can play music by drawing shapes
-                <br />
-                -Connect the shapes to a certain sound
-                <br />
-                -Play music by pressing the shapes you have drawn
-              </Grid>
-
               <Button
                 className="pulseButton"
                 style={{

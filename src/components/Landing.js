@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import FormPage from "./FormPage";
 import "./landing.css";
-import logo from "../imgs/logo.png";
+import logo from "../imgs/jjj.png";
 
 class Landing extends Component {
   state = { render: false };

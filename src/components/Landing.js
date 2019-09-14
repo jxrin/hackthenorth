@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import picture from "./logo192.png";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import FormPage from "./FormPage";
-import cursor from "./cursor.css";
+import "./landing.css";
+import logo from "../imgs/logo.png";
 
 class Landing extends Component {
   state = { render: false };
@@ -13,12 +13,15 @@ class Landing extends Component {
 
   render() {
     return (
-      <div>
+      <div
+        className="landingPage"
+        style={{ width: window.innerWidth, height: window.innerHeight }}
+      >
+        <img src={logo} style={{ width: "50%", height: "50%" }} />
         {/* {!this.state.render ? (
           <Grid container style={{ marginTop: "10%" }}>
             <Grid item md={1} />
             <Grid item md={7}>
-              <img src={picture} />
             </Grid>
             <Grid item md={3}>
               <Grid item md={12}>

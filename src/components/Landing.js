@@ -37,12 +37,12 @@ class Landing extends Component {
           <img
             src={logo}
             style={{
-              width: "40%",
-              height: "70%",
+              width: "44%",
+              height: "60%",
               border: "none",
               position: "absolute",
-              bottom: 0,
-              right: 20
+              bottom: 75,
+              right: 100
             }}
           />
         </Grid>

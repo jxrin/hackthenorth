@@ -21,13 +21,14 @@ class Landing extends Component {
         <Grid item md={6}>
           <p
             style={{
-              marginTop: "25%",
+              marginTop: "20%",
               marginLeft: "20%",
               display: "center",
               color: "white",
               display: "inline - block",
               float: "left",
-              fontSize: "50px"
+              fontSize: "50px",
+              fontWeight: "bold"
             }}
           >
             paper piano.
@@ -42,7 +43,7 @@ class Landing extends Component {
               border: "none",
               position: "absolute",
               bottom: 75,
-              right: 100
+              right: 60
             }}
           />
         </Grid>

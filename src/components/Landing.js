@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import Navbar from "./Navbar";
-import "./navbar.css";
 import picture from "./logo192.png";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import FormPage from "./FormPage";
+import cursor from "./cursor.css";
 
 class Landing extends Component {
   state = { render: false };
@@ -15,8 +14,7 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        <Navbar />
-        {!this.state.render ? (
+        {/* {!this.state.render ? (
           <Grid container style={{ marginTop: "10%" }}>
             <Grid item md={1} />
             <Grid item md={7}>
@@ -49,7 +47,7 @@ class Landing extends Component {
           </Grid>
         ) : (
           <FormPage />
-        )}
+        )} */}
       </div>
     );
   }

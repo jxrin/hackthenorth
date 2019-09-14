@@ -1,0 +1,11 @@
+input, input:focus {
+    border:none;
+  }
+  input {
+    animation: blink-empty 1s infinite;
+    border-left: transparent solid 1px;
+    margin:5px 
+  }
+  @keyframes blink-empty {
+    50% {border-left: 1px solid #333;}
+  }

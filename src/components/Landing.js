@@ -17,7 +17,7 @@ class Landing extends Component {
         className="landingPage"
         style={{ width: window.innerWidth, height: window.innerHeight }}
       >
-        <img src={logo} style={{ width: "60%", height: "95%" }} />
+        <img src={logo} style={{ width: "60%", height: "80%", border:0}} />
         {/* {!this.state.render ? (
           <Grid container style={{ marginTop: "10%" }}>
             <Grid item md={1} />

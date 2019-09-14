@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import FormPage from "./FormPage";
 import "./landing.css";
 import logo from "../imgs/jjj.png";
+import { blockStatement } from "@babel/types";
 
 class Landing extends Component {
   state = { render: false };
@@ -17,18 +18,21 @@ class Landing extends Component {
         className="landingPage"
         style={{ width: window.innerWidth, height: window.innerHeight }}
       >
-        {/* <Grid item md={6}>
+        <Grid item md={6}>
           <p
             style={{
-              width: "80%",
-              height: "100%",
+              marginTop: "25%",
+              marginLeft: "20%",
               display: "center",
-              color: "white"
+              color: "white",
+              display: "inline - block",
+              float: "left",
+              fontSize: "50px"
             }}
           >
-            paper piano
+            paper piano.
           </p>
-        </Grid> */}
+        </Grid>
         <Grid item md={6}>
           <img
             src={logo}

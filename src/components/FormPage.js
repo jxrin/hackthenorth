@@ -28,11 +28,11 @@ class FormPage extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleChangeColor(event) {
-    this.setState({ setColor: event.target.value });
+    this.setState({ color: event.target.value });
   }
 
   handleChangeSound(event) {
-    this.setState({ setSound: event.target.value });
+    this.setState({ sound: event.target.value });
   }
 
   handleClose() {
@@ -42,7 +42,6 @@ class FormPage extends Component {
   handleOpen() {
     this.setState({ setOpen: true });
   }
-
   handleClick() {
     this.setState({ renderShape: !this.state.renderShape });
   }
@@ -62,8 +61,8 @@ class FormPage extends Component {
               {[...Array(10)].map((_, i) => (
                 <Circle
                   key={i}
-                  x={20}
-                  y={20}
+                  x={20 * i}
+                  y={20 * i}
                   radius={20}
                   fill="#89b717"
                   opacity={0.8}
@@ -86,7 +85,7 @@ class FormPage extends Component {
             backgroundColor: "white",
             borderRadius: "20px",
             marginRight: "4%",
-            marginTop: "8%",
+            marginTop: "3%",
             align: "center"
           }}
         >
@@ -99,13 +98,18 @@ class FormPage extends Component {
               }}
             >
               <Layer>
+                {console.log("worked!")}
                 <Circle
                   x={40}
                   y={40}
                   radius={20}
                   fill="#89b717"
                   opacity={0.8}
-                  style={{ display: "inline-block" }}
+                  style={{
+                    display: "inline-block",
+                    float: "right",
+                    marginTop: "40%"
+                  }}
                 />
               </Layer>
             </Stage>
@@ -119,14 +123,17 @@ class FormPage extends Component {
             <br />
             <br />
             <FormControl style={{ width: "200px" }}>
-              <InputLabel htmlFor="demo-controlled-open-select">
+              <InputLabel
+                htmlFor="demo-controlled-open-select"
+                style={{ display: "inline-block", float: "right" }}
+              >
                 Colour
               </InputLabel>
               <Select
                 open={this.open}
                 onClose={this.handleClose}
                 onOpen={this.handleOpen}
-                value={this.color}
+                value={this.state.color}
                 onChange={this.handleChangeColor}
                 inputProps={{
                   name: "color",
@@ -138,6 +145,7 @@ class FormPage extends Component {
                 </MenuItem>
                 <MenuItem value="red">Red</MenuItem>
                 <MenuItem value="orange">Orange</MenuItem>
+                <MenuItem value="yellow">Yellow</MenuItem>
                 <MenuItem value="green">Green</MenuItem>
                 <MenuItem value="blue">Blue</MenuItem>
                 <MenuItem value="purple">Purple</MenuItem>

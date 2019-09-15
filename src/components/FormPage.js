@@ -142,16 +142,19 @@ class FormPage extends Component {
             </Layer>
           </Stage>
         </Grid>
-
         <div
-          style={{
-            color: "lightGray",
-            fontSize: "25px",
-            fontWeight: "bold"
-          }}
-        >
-          customize your board.
-        </div>
+              style={{
+                color: "white",
+                fontSize: "100px",
+                fontWeight: "bold",
+                width: "40%", 
+                display: "inline-flex",
+                justifyContent: "left",
+                marginLeft: "150px"
+                }}
+            >
+            customize your board.
+            </div>
         <Grid
           item
           md={5}
@@ -316,6 +319,26 @@ class FormPage extends Component {
             <br />
           </div>
         </Grid>
+        <div style={{
+                display: "inline-flex",
+                marginTop: "30px"
+              }}>
+                <Button
+                  className="pulseButton"
+                  style={{
+                    width: "15%",
+                    borderRadius: "10px",
+                    backgroundColor: "white",
+                    fontSize: "17px",
+                    fontWeight: "bold",
+                    color: "#DE7383",
+                    // marginLeft: "43%"
+                  }}
+                  onClick={() => this.add()}
+                >
+                  next
+                </Button>
+              </div>
       </>
     );
   }

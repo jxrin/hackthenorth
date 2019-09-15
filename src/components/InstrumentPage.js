@@ -7,7 +7,6 @@ import board from "../imgs/Board.png";
 import { blockStatement } from "@babel/types";
 
 class Main extends Component {
-  state = { render: true };
 
   render() {
     return (
@@ -15,8 +14,6 @@ class Main extends Component {
         className="landingPage"
         style={{ width: window.innerWidth, height: window.innerHeight }}
       >
-        {this.state.render ? (
-          <>
             <Grid item md={6}>
               <p
                 style={{
@@ -64,11 +61,7 @@ class Main extends Component {
                 }}
               />
             </Grid>
-          </>
-        ) : (
-          <Landing />
-        )}
-      </div>
+        </div>
     );
   }
 }

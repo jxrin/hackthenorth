@@ -167,12 +167,13 @@ class FormPage extends Component {
               md={5}
               style={{
                 width: "100%",
+                height: "35%",
                 display: "inline-block",
                 float: "right",
                 backgroundColor: "white",
                 borderRadius: "20px",
                 marginRight: "4%",
-                marginTop: "3%"
+                marginTop: "7%"
               }}
             >
               <Grid
@@ -347,7 +348,6 @@ class FormPage extends Component {
               >
                 next
               </Button>
-              {this.state.instrument === true && <Instrument />}
             </div>
           </>
         ) : (

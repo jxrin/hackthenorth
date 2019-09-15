@@ -35,7 +35,7 @@ class Landing extends Component {
               </p>
               <div style={{
                 display: "flex",
-                marginTop: "50px"
+                marginTop: "90px"
               }}>
                 <Button
                   className="pulseButton"
@@ -43,7 +43,7 @@ class Landing extends Component {
                     width: "15%",
                     borderRadius: "10px",
                     backgroundColor: "white",
-                    fontSize: "17px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     color: "#DE7383",
                     marginLeft: "400px"

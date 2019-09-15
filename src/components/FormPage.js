@@ -157,7 +157,8 @@ class FormPage extends Component {
                 width: "40%",
                 display: "inline-flex",
                 justifyContent: "left",
-                marginLeft: "150px"
+                marginLeft: "150px",
+                marginTop: "6%"
               }}
             >
               customize your board.
@@ -172,8 +173,8 @@ class FormPage extends Component {
                 float: "right",
                 backgroundColor: "white",
                 borderRadius: "20px",
-                marginRight: "4%",
-                marginTop: "7%"
+                marginRight: "4.5%",
+                marginTop: "3%"
               }}
             >
               <Grid

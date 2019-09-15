@@ -47,7 +47,7 @@ class Landing extends Component {
                     color: "#DE7383",
                     marginLeft: "-111%"
                   }}
-                  // onClick={() => this.add()}
+                  onClick={() => this.add()}
                 >
                   start
                 </Button>

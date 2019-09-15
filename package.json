@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.4.2",
     "@material-ui/icons": "^4.4.1",
+    "antd": "^3.23.2",
     "bootstrap": "^4.3.1",
     "konva": "^4.0.10",
     "react": "^16.9.0",

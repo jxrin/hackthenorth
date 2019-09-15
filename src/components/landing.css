@@ -14,6 +14,19 @@ input, input:focus {
     50% {border-left: 1px solid #333;}
   }
 
+  .cursor i {
+    position: absolute;
+    width: 1px;
+    height: 80%;
+    background-color: gray;
+    left: 5px;
+    top: 10%;
+    animation-name: blink;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    opacity: 1;
+}
+
   
 .pulseButton {
     position: relative;

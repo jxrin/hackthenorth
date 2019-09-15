@@ -5,61 +5,63 @@ import Landing from "./Landing";
 import "./landing.css";
 import board from "../imgs/Board.png";
 import { blockStatement } from "@babel/types";
+import image from "../imgs/Board.png";
 
 class Instrument extends Component {
   render() {
     return (
       <div
         className="landingPage"
-        style={{ width: window.innerWidth, height: window.innerHeight }}
+        style={{
+          width: window.innerWidth,
+          height: window.innerHeight,
+          align: "center"
+        }}
       >
-        <Grid item md={6}>
-          <p
+        <div
+          style={{
+            marginTop: "3%",
+            marginLeft: "13.5%",
+            display: "center",
+            color: "white",
+            display: "inline - block",
+            float: "left",
+            fontSize: "130px",
+            fontWeight: "bold"
+          }}
+        >
+          begin playing your board.
+        </div>
+        <div>
+          {/* <Button
+            className="pulseButton"
             style={{
-              marginTop: "20%",
-              marginLeft: "14%",
-              display: "center",
-              color: "white",
-              display: "inline - block",
-              float: "left",
-              fontSize: "50px",
-              fontWeight: "bold"
+              width: "15%",
+              borderRadius: "10px",
+              marginTop: "40%",
+              backgroundColor: "white",
+              fontSize: "17px",
+              fontWeight: "bold",
+              color: "#DE7383",
+              marginLeft: "-126%"
             }}
+            onClick={() => this.add()}
           >
-            begin playing your board.
-          </p>
-          <div>
-            <Button
-              className="pulseButton"
-              style={{
-                width: "15%",
-                borderRadius: "10px",
-                marginTop: "40%",
-                backgroundColor: "white",
-                fontSize: "17px",
-                fontWeight: "bold",
-                color: "#DE7383",
-                marginLeft: "-126%"
-              }}
-              onClick={() => this.add()}
-            >
-              restart
-            </Button>
-          </div>
-        </Grid>
-        <Grid item md={6}>
-          <img
-            src={board}
-            style={{
-              width: "44%",
-              height: "60%",
-              border: "none",
-              position: "absolute",
-              bottom: 75,
-              right: 60
-            }}
-          />
-        </Grid>
+            restart
+          </Button> */}
+        </div>
+        <img
+          src={image}
+          style={{
+            display: "center",
+            marginTop: "2.5%",
+            marginLeft: "13.25%",
+            width: "3132.5px",
+            height: "1950px",
+            border: "none",
+            // position: "absolute",
+          }}
+        />
       </div>
     );
   }

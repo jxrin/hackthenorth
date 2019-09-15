@@ -8,11 +8,13 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
+import Instrument from "./InstrumentPage";
 
 class FormPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      instrument: false,
       open: false,
       setOpen: true,
       render: false,
@@ -46,6 +48,7 @@ class FormPage extends Component {
     this.handleClose = this.handleClose.bind(this);
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.add = this.add.bind(this);
   }
   handleChangeColor(event) {
     this.state.shapes.map(function(data, idx) {
@@ -54,7 +57,9 @@ class FormPage extends Component {
       }
     });
   }
-
+  add() {
+    this.setState({ instrument: true });
+  }
   handleChangeSound(event) {
     this.state.shapes.map(function(data, idx) {
       if (data.render === true) {
@@ -143,18 +148,18 @@ class FormPage extends Component {
           </Stage>
         </Grid>
         <div
-              style={{
-                color: "white",
-                fontSize: "100px",
-                fontWeight: "bold",
-                width: "40%", 
-                display: "inline-flex",
-                justifyContent: "left",
-                marginLeft: "150px"
-                }}
-            >
-            customize your board.
-            </div>
+          style={{
+            color: "white",
+            fontSize: "100px",
+            fontWeight: "bold",
+            width: "40%",
+            display: "inline-flex",
+            justifyContent: "left",
+            marginLeft: "150px"
+          }}
+        >
+          customize your board.
+        </div>
         <Grid
           item
           md={5}
@@ -319,26 +324,29 @@ class FormPage extends Component {
             <br />
           </div>
         </Grid>
-        <div style={{
-                display: "inline-flex",
-                marginTop: "30px"
-              }}>
-                <Button
-                  className="pulseButton"
-                  style={{
-                    width: "15%",
-                    borderRadius: "10px",
-                    backgroundColor: "white",
-                    fontSize: "17px",
-                    fontWeight: "bold",
-                    color: "#DE7383",
-                    // marginLeft: "43%"
-                  }}
-                  onClick={() => this.add()}
-                >
-                  next
-                </Button>
-              </div>
+        <div
+          style={{
+            display: "inline-flex",
+            marginTop: "30px"
+          }}
+        >
+          <Button
+            className="pulseButton"
+            style={{
+              width: "15%",
+              borderRadius: "10px",
+              backgroundColor: "white",
+              fontSize: "17px",
+              fontWeight: "bold",
+              color: "#DE7383"
+              // marginLeft: "43%"
+            }}
+            onClick={() => this.add()}
+          >
+            next
+          </Button>
+          {this.state.instrument === true && <Instrument />}
+        </div>
       </>
     );
   }

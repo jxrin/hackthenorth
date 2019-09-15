@@ -1,3 +1,40 @@
 .landingPage {
     background: linear-gradient(0deg, rgba(222,115,131,1) 0%, rgba(227,153,117,1) 100%);
 }
+
+input, input:focus {
+    border:none;
+  }
+  input {
+    animation: blink-empty 1s infinite;
+    border-left: transparent solid 1px;
+    margin:5px 
+  }
+  @keyframes blink-empty {
+    50% {border-left: 1px solid #333;}
+  }
+
+  
+.pulseButton {
+    position: relative;
+    border: 0 0 0 rgb(252, 0, 138);
+    box-shadow: 0 0 0 rgb(252, 0, 138);
+    background-color:rgb(252, 0, 138);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    text-transform: lowercase !important;
+  }
+  .pulseButton:hover 
+  {
+    -webkit-animation: none;-moz-animation: none;-ms-animation: none;animation: none;
+    text-transform: lowercase;
+  }
+  
+  @-webkit-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
+  @-moz-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
+  @-ms-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
+  @keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}

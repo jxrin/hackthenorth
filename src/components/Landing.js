@@ -18,58 +18,58 @@ class Landing extends Component {
         className="landingPage"
         style={{ width: window.innerWidth, height: window.innerHeight }}
       >
-        <Grid item md={6}>
-          <p
-            style={{
-              marginTop: "20%",
-              marginLeft: "20%",
-              display: "center",
-              color: "white",
-              display: "inline - block",
-              float: "left",
-              fontSize: "50px",
-              fontWeight: "bold"
-            }}
-          >
-            paper piano.
-          </p>
-        </Grid>
-        <Grid item md={6}>
-          <img
-            src={logo}
-            style={{
-              width: "44%",
-              height: "60%",
-              border: "none",
-              position: "absolute",
-              bottom: 75,
-              right: 60
-            }}
-          />
-        </Grid>
-
-        {/* {!this.state.render ? (
-          <Grid container style={{ marginTop: "10%" }}>
-            <Grid item md={1} />
-            <Grid item md={7}>
-            </Grid>
-            <Grid item md={3}>
-              <Button
-                className="pulseButton"
+        {!this.state.render ? (
+          <>
+            <Grid item md={6}>
+              <p
                 style={{
-                  marginTop: "30%",
-                  backgroundColor: "pink",
-                  fontSize: "20px"
+                  marginTop: "20%",
+                  marginLeft: "20%",
+                  display: "center",
+                  color: "white",
+                  display: "inline - block",
+                  float: "left",
+                  fontSize: "50px",
+                  fontWeight: "bold"
                 }}
-                onClick={() => this.add()}
               >
-                Start
-              </Button>
+                paper piano.
+              </p>
+              <div>
+                <Button
+                  className="pulseButton"
+                  style={{
+                    width: "15%",
+                    borderRadius: "10px",
+                    marginTop: "35%",
+                    backgroundColor: "white",
+                    fontSize: "17px",
+                    color: "#DE7383",
+                    marginLeft: "-111%"
+                  }}
+                  // onClick={() => this.add()}
+                >
+                  start
+                </Button>
+              </div>
             </Grid>
-          </Grid>
+            <Grid item md={6}>
+              <img
+                src={logo}
+                style={{
+                  width: "44%",
+                  height: "60%",
+                  border: "none",
+                  position: "absolute",
+                  bottom: 75,
+                  right: 60
+                }}
+              />
+            </Grid>
+          </>
         ) : (
           <FormPage />
-        )} */}
+        )}
       </div>
     );
   }

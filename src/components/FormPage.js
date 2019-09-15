@@ -14,7 +14,7 @@ class FormPage extends Component {
     super(props);
     this.state = {
       open: false,
-      setOpen: false,
+      setOpen: true,
       render: false,
       shapes: [
         {
@@ -22,6 +22,8 @@ class FormPage extends Component {
           x: 20,
           y: 20,
           radius: 20,
+          width: 0,
+          height: 0,
           fill: "#89b717",
           sound: "111",
           render: false
@@ -31,6 +33,7 @@ class FormPage extends Component {
           x: 60,
           y: 60,
           width: 10,
+          radius: 20,
           height: 10,
           fill: "#89b717",
           sound: "111",
@@ -44,12 +47,20 @@ class FormPage extends Component {
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-  handleChangeColor(event, i) {
-    this.state.shapes[i] = { fill: event.target.value };
+  handleChangeColor(event) {
+    this.state.shapes.map(function(data, idx) {
+      if (data.render === true) {
+        data.fill = event.target.value;
+      }
+    });
   }
 
-  handleChangeSound(event, i) {
-    this.state.shapes[i] = { sound: event.target.value };
+  handleChangeSound(event) {
+    this.state.shapes.map(function(data, idx) {
+      if (data.render === true) {
+        data.sound = event.target.value;
+      }
+    });
   }
 
   handleClose() {
@@ -59,9 +70,15 @@ class FormPage extends Component {
   handleOpen() {
     this.setState({ setOpen: true });
   }
+
   handleClick(i) {
-    let obj = this.state.shapes[i].render;
-    this.setState({ render: true, obj: true });
+    this.forceUpdate();
+    this.setState({ render: true });
+    this.state.shapes[i].render = true;
+    {
+      console.log(this.state.shapes[i]);
+    }
+    // this.state.shapes[i].render = false;
   }
 
   render() {
@@ -135,159 +152,170 @@ class FormPage extends Component {
         >
           customize your board.
         </div>
-        {this.state.render && (
+        <Grid
+          item
+          md={5}
+          style={{
+            width: "100%",
+            display: "inline-block",
+            float: "right",
+            backgroundColor: "white",
+            borderRadius: "20px",
+            marginRight: "4%",
+            marginTop: "3%"
+          }}
+        >
           <Grid
             item
-            md={5}
+            md={6}
             style={{
-              width: "100%",
               display: "inline-block",
               float: "right",
-              backgroundColor: "white",
-              borderRadius: "20px",
-              marginRight: "4%",
-              marginTop: "3%"
+              marginTop: "10%"
             }}
           >
-            <Grid
-              item
-              md={6}
+            <Stage width={100} height={100}>
+              <Layer>
+                {this.state.shapes.map(function(data, idx) {
+                  if (data.shape === "Circle" && data.render === true) {
+                    return (
+                      <Circle
+                        key={idx}
+                        x={data.x}
+                        y={data.y}
+                        radius={data.radius}
+                        fill={data.fill}
+                        opacity={0.8}
+                        shadowColor="black"
+                      />
+                    );
+                  }
+                  if (data.shape === "Rect" && data.render === true) {
+                    return (
+                      <Rect
+                        key={idx}
+                        x={data.x}
+                        y={data.y}
+                        width={data.width}
+                        height={data.height}
+                        fill={data.fill}
+                        opacity={0.8}
+                        shadowColor="black"
+                      />
+                    );
+                  }
+                }, this)}
+              </Layer>
+            </Stage>
+            <Button
               style={{
+                backgroundColor: "lightGray",
                 display: "inline-block",
                 float: "right",
-                marginTop: "10%"
+                marginTop: "65%",
+                marginRight: "20%"
               }}
             >
-              <Stage width={100} height={100}>
-                <Layer>
-                  <Circle
-                    x={40}
-                    y={40}
-                    radius={40}
-                    fill={this.state.color}
-                    opacity={0.8}
-                  />
-                </Layer>
-              </Stage>
-              <Button
-                style={{
-                  backgroundColor: "lightGray",
-                  display: "inline-block",
-                  float: "right",
-                  marginTop: "65%",
-                  marginRight: "20%"
-                }}
-                onClick={() => {
-                  this.setState({ render: false });
-                }}
-              >
-                Save
+              Save
+            </Button>
+          </Grid>
+          <Grid
+            item
+            md={6}
+            style={{
+              display: "inline-block",
+              marginTop: "5%",
+              marginRight: "2%",
+              float: "right",
+              color: "gray"
+            }}
+          >
+            <p>shape.</p>
+          </Grid>
+          <br />
+          <div
+            style={{
+              display: "inline-block",
+              float: "left",
+              marginLeft: "5%"
+            }}
+          >
+            <form autoComplete="off">
+              {" "}
+              <Button style={{ textTransform: "lowercase", color: "gray" }}>
+                Select your colour.
               </Button>
-            </Grid>
-            <Grid
-              item
-              md={6}
-              style={{
-                display: "inline-block",
-                marginTop: "5%",
-                marginRight: "2%",
-                float: "right",
-                color: "gray"
-              }}
-            >
-              <p>shape.</p>
-            </Grid>
+              <br /> <br />
+              <FormControl style={{ width: "200px" }}>
+                <InputLabel
+                  htmlFor="demo-controlled-open-select"
+                  style={{ display: "inline-block", float: "right" }}
+                >
+                  Colour
+                </InputLabel>
+                <Select
+                  open={this.open}
+                  onClose={this.handleClose}
+                  onOpen={this.handleOpen}
+                  value={this.state.color}
+                  onChange={this.handleChangeColor}
+                  inputProps={{
+                    name: "color",
+                    id: "demo-controlled-open-select"
+                  }}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value="red">Red</MenuItem>
+                  <MenuItem value="orange">Orange</MenuItem>
+                  <MenuItem value="yellow">Yellow</MenuItem>
+                  <MenuItem value="green">Green</MenuItem>
+                  <MenuItem value="blue">Blue</MenuItem>
+                  <MenuItem value="purple">Purple</MenuItem>
+                  <MenuItem value="black">Black</MenuItem>
+                </Select>
+              </FormControl>
+            </form>
             <br />
-            <div
-              style={{
-                display: "inline-block",
-                float: "left",
-                marginLeft: "5%"
-              }}
-            >
-              <form autoComplete="off">
-                {" "}
-                <Button
-                  onClick={this.handleOpen}
-                  style={{ textTransform: "lowercase", color: "gray" }}
-                >
-                  Select your colour.
-                </Button>
-                <br /> <br />
-                <FormControl style={{ width: "200px" }}>
-                  <InputLabel
-                    htmlFor="demo-controlled-open-select"
-                    style={{ display: "inline-block", float: "right" }}
-                  >
-                    Colour
-                  </InputLabel>
-                  <Select
-                    open={this.open}
-                    onClose={this.handleClose}
-                    onOpen={this.handleOpen}
-                    value={this.state.color}
-                    onChange={this.handleChangeColor}
-                    inputProps={{
-                      name: "color",
-                      id: "demo-controlled-open-select"
-                    }}
-                  >
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
-                    <MenuItem value="red">Red</MenuItem>
-                    <MenuItem value="orange">Orange</MenuItem>
-                    <MenuItem value="yellow">Yellow</MenuItem>
-                    <MenuItem value="green">Green</MenuItem>
-                    <MenuItem value="blue">Blue</MenuItem>
-                    <MenuItem value="purple">Purple</MenuItem>
-                    <MenuItem value="black">Black</MenuItem>
-                  </Select>
-                </FormControl>
-              </form>
-              <br />
-              <br />
+            <br />
 
-              <form autoComplete="off">
-                {" "}
-                <Button
-                  onClick={this.handleOpen}
-                  style={{ textTransform: "lowercase", color: "gray" }}
+            <form autoComplete="off">
+              {" "}
+              <Button style={{ textTransform: "lowercase", color: "gray" }}>
+                Select your sound.
+              </Button>
+              <br />
+              <FormControl style={{ width: "200px" }}>
+                <InputLabel htmlFor="demo-controlled-open-select">
+                  Sound
+                </InputLabel>
+                <Select
+                  open={this.open}
+                  onClose={this.handleClose}
+                  onOpen={this.handleOpen}
+                  value={this.sound}
+                  onChange={this.handleChangeSound}
+                  inputProps={{
+                    name: "sound",
+                    id: "demo-controlled-open-select"
+                  }}
                 >
-                  Select your sound.
-                </Button>
-                <br />
-                <FormControl style={{ width: "200px" }}>
-                  <InputLabel htmlFor="demo-controlled-open-select">
-                    Sound
-                  </InputLabel>
-                  <Select
-                    open={this.open}
-                    onClose={this.handleClose}
-                    onOpen={this.handleOpen}
-                    value={this.sound}
-                    onChange={this.handleChangeSound}
-                    inputProps={{
-                      name: "sound",
-                      id: "demo-controlled-open-select"
-                    }}
-                  >
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
-                    {/* <MenuItem value="red">Red</MenuItem>
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  {/* <MenuItem value="red">Red</MenuItem>
                 <MenuItem value="orange">Orange</MenuItem>
                 <MenuItem value="green">Green</MenuItem>
                 <MenuItem value="blue">Blue</MenuItem>
                 <MenuItem value="purple">Purple</MenuItem>
                 <MenuItem value="black">Black</MenuItem> */}
-                  </Select>
-                </FormControl>
-              </form>
-              <br />
-            </div>
-          </Grid>
-        )}
+                </Select>
+              </FormControl>
+            </form>
+            <br />
+          </div>
+        </Grid>
       </>
     );
   }

@@ -7,18 +7,15 @@ import board from "../imgs/Board.png";
 import { blockStatement } from "@babel/types";
 
 class Main extends Component {
-  state = { render: false };
-  add = () => {
-    this.setState({ render: !this.state.render });
-  };
+  state = { render: true };
 
   render() {
     return (
       <div
-        className="mainPage"
+        className="landingPage"
         style={{ width: window.innerWidth, height: window.innerHeight }}
       >
-        {!this.state.render ? (
+        {this.state.render ? (
           <>
             <Grid item md={6}>
               <p
@@ -56,7 +53,7 @@ class Main extends Component {
             </Grid>
             <Grid item md={6}>
               <img
-                src={logo}
+                // src={logo}
                 style={{
                   width: "44%",
                   height: "60%",

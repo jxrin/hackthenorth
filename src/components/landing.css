@@ -48,7 +48,7 @@ input, input:focus {
     text-transform: lowercase;
   }
   
-  @-webkit-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
-  @-moz-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
-  @-ms-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
-  @keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
+  @-webkit-keyframes pulse {to {box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);}}
+  @-moz-keyframes pulse {to {box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);}}
+  @-ms-keyframes pulse {to {box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);}}
+  @keyframes pulse {to {box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);}}

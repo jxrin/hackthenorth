@@ -26,24 +26,24 @@ class Landing extends Component {
                   color: "white",
                   margin: "0",
                   marginLeft: "400px",
-                  fontSize: "200px",
+                  fontSize: "250px",
                   fontWeight: "bold",
-                  paddingTop: "250px"
+                  paddingTop: "350px"
                 }}
               >
                 paper piano.
               </p>
               <div style={{
                 display: "flex",
-                marginTop: "90px"
+                marginTop: "110px"
               }}>
                 <Button
                   className="pulseButton"
                   style={{
                     width: "15%",
-                    borderRadius: "10px",
+                    borderRadius: "30px",
                     backgroundColor: "white",
-                    fontSize: "20px",
+                    fontSize: "70px",
                     fontWeight: "bold",
                     color: "#DE7383",
                     marginLeft: "400px"

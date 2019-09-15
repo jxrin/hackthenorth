@@ -21,9 +21,9 @@ class FormPage extends Component {
       shapes: [
         {
           shape: "Circle",
-          x: 20,
-          y: 20,
-          radius: 20,
+          x: 200,
+          y: 200,
+          radius: 100,
           width: 0,
           height: 0,
           fill: "#89b717",
@@ -32,11 +32,11 @@ class FormPage extends Component {
         },
         {
           shape: "Rect",
-          x: 60,
-          y: 60,
-          width: 10,
-          radius: 20,
-          height: 10,
+          x: 50,
+          y: 500,
+          width: 600,
+          radius: 0,
+          height: 100,
           fill: "#89b717",
           sound: "111",
           render: false
@@ -115,7 +115,6 @@ class FormPage extends Component {
                           y={data.y}
                           radius={data.radius}
                           fill={data.fill}
-                          opacity={0.8}
                           shadowColor="black"
                           shadowBlur={10}
                           shadowOpacity={0.6}
@@ -134,7 +133,6 @@ class FormPage extends Component {
                           width={data.width}
                           height={data.height}
                           fill={data.fill}
-                          opacity={0.8}
                           shadowColor="black"
                           shadowBlur={10}
                           shadowOpacity={0.6}
@@ -196,7 +194,6 @@ class FormPage extends Component {
                             y={data.y}
                             radius={data.radius}
                             fill={data.fill}
-                            opacity={0.8}
                             shadowColor="black"
                           />
                         );
@@ -210,7 +207,6 @@ class FormPage extends Component {
                             width={data.width}
                             height={data.height}
                             fill={data.fill}
-                            opacity={0.8}
                             shadowColor="black"
                           />
                         );
@@ -253,14 +249,24 @@ class FormPage extends Component {
               >
                 <form autoComplete="off">
                   {" "}
-                  <Button style={{ textTransform: "lowercase", color: "gray" }}>
+                  <Button
+                    style={{
+                      textTransform: "lowercase",
+                      color: "gray",
+                      fontSize: "50px"
+                    }}
+                  >
                     Select your colour.
                   </Button>
                   <br /> <br />
                   <FormControl style={{ width: "200px" }}>
                     <InputLabel
                       htmlFor="demo-controlled-open-select"
-                      style={{ display: "inline-block", float: "right" }}
+                      style={{
+                        display: "inline-block",
+                        float: "right",
+                        fontSize: "15px"
+                      }}
                     >
                       Colour
                     </InputLabel>
@@ -293,11 +299,17 @@ class FormPage extends Component {
 
                 <form autoComplete="off">
                   {" "}
-                  <Button style={{ textTransform: "lowercase", color: "gray" }}>
+                  <Button
+                    style={{
+                      textTransform: "lowercase",
+                      color: "gray",
+                      fontSize: "50px"
+                    }}
+                  >
                     Select your sound.
                   </Button>
                   <br />
-                  <FormControl style={{ width: "200px" }}>
+                  <FormControl style={{ width: "200px", fontSize: "30px" }}>
                     <InputLabel htmlFor="demo-controlled-open-select">
                       Sound
                     </InputLabel>

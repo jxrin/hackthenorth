@@ -167,7 +167,7 @@ class FormPage extends Component {
               md={5}
               style={{
                 width: "100%",
-                height: "35%",
+                height: "33%",
                 display: "inline-block",
                 float: "right",
                 backgroundColor: "white",
@@ -330,13 +330,14 @@ class FormPage extends Component {
             <div
               style={{
                 display: "inline-flex",
-                marginTop: "30px"
+                marginTop: "0",
+                marginLeft: "30px"
               }}
             >
               <Button
                 className="pulseButton"
                 style={{
-                  width: "15%",
+                  width: "20%",
                   borderRadius: "10px",
                   backgroundColor: "white",
                   fontSize: "17px",

@@ -49,7 +49,7 @@ class Instrument extends Component {
         </Grid>
         <Grid item md={6}>
           <img
-            // src={logo}
+            src={board}
             style={{
               width: "44%",
               height: "60%",

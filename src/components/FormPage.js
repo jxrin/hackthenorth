@@ -48,7 +48,6 @@ class FormPage extends Component {
     this.handleClose = this.handleClose.bind(this);
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.add = this.add.bind(this);
   }
   handleChangeColor(event) {
     this.state.shapes.map(function(data, idx) {
@@ -57,9 +56,9 @@ class FormPage extends Component {
       }
     });
   }
-  add() {
+  add = () => {
     this.setState({ instrument: true });
-  }
+  };
   handleChangeSound(event) {
     this.state.shapes.map(function(data, idx) {
       if (data.render === true) {

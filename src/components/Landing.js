@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import FormPage from "./FormPage";
 import "./landing.css";
 import logo from "../imgs/jjj.png";
-import { blockStatement } from "@babel/types";
+import { blockStatement, whileStatement } from "@babel/types";
 
 class Landing extends Component {
   state = { render: false };
@@ -23,29 +23,30 @@ class Landing extends Component {
             <Grid item md={6}>
               <p
                 style={{
-                  marginTop: "20%",
-                  marginLeft: "20%",
-                  display: "center",
                   color: "white",
-                  display: "inline - block",
-                  float: "left",
-                  fontSize: "50px",
-                  fontWeight: "bold"
+                  margin: "0",
+                  marginLeft: "400px",
+                  fontSize: "200px",
+                  fontWeight: "bold",
+                  paddingTop: "250px"
                 }}
               >
                 paper piano.
               </p>
-              <div>
+              <div style={{
+                display: "flex",
+                marginTop: "50px"
+              }}>
                 <Button
                   className="pulseButton"
                   style={{
                     width: "15%",
                     borderRadius: "10px",
-                    marginTop: "35%",
                     backgroundColor: "white",
                     fontSize: "17px",
+                    fontWeight: "bold",
                     color: "#DE7383",
-                    marginLeft: "-111%"
+                    marginLeft: "400px"
                   }}
                   onClick={() => this.add()}
                 >
@@ -58,11 +59,10 @@ class Landing extends Component {
                 src={logo}
                 style={{
                   width: "44%",
-                  height: "60%",
                   border: "none",
                   position: "absolute",
-                  bottom: 75,
-                  right: 60
+                  bottom: "150px",
+                  right: "200px"
                 }}
               />
             </Grid>

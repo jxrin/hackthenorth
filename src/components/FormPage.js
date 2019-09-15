@@ -9,6 +9,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
 import Instrument from "./InstrumentPage";
+import cass from "../imgs/Cassette.png";
+import notes from "../imgs/notes2.png";
 
 class FormPage extends Component {
   constructor(props) {
@@ -19,25 +21,39 @@ class FormPage extends Component {
       setOpen: true,
       render: false,
       shapes: [
+
         {
           shape: "Circle",
-          x: 200,
-          y: 200,
-          radius: 100,
+          x: 1500,
+          y: 1000,
+          radius: 300,
           width: 0,
           height: 0,
-          fill: "#89b717",
+          fill: "#662556",
           sound: "111",
           render: false
         },
+
         {
           shape: "Rect",
-          x: 50,
+          x: 200,
           y: 500,
-          width: 600,
+          width: 500,
           radius: 0,
-          height: 100,
-          fill: "#89b717",
+          height: 400,
+          fill: "#F5A623",
+          sound: "111",
+          render: false
+        },
+
+        {
+          shape: "Circle",
+          x: 500,
+          y: 1500,
+          width: 0,
+          radius: 300,
+          height: 0,
+          fill: "#D95D81",
           sound: "111",
           render: false
         }
@@ -76,18 +92,31 @@ class FormPage extends Component {
   }
 
   handleClick(i) {
-    this.forceUpdate();
     this.setState({ render: true });
     this.state.shapes[i].render = true;
     {
       console.log(this.state.shapes[i]);
     }
+    this.forceUpdate();
+
     // this.state.shapes[i].render = false;
   }
 
   render() {
     return (
+      <div
+        className="landingPage"
+        style={{
+          width: window.innerWidth,
+          height: window.innerHeight,
+          align: "center",
+          backgroundImage: `url(${notes})`,
+          backgroundSize: "100% 98%",
+          backgroundRepeat: "no-repeat"
+        }}
+      > 
       <>
+      
         {!this.state.instrument ? (
           <>
             <Grid
@@ -169,21 +198,32 @@ class FormPage extends Component {
                 display: "inline-block",
                 float: "right",
                 backgroundColor: "white",
-                borderRadius: "20px",
+                borderRadius: "50px",
                 marginRight: "4.5%",
                 marginTop: "3%"
               }}
             >
+              <img
+                src={cass}
+                style={{
+                  width: "32%",
+                  border: "none",
+                  position: "absolute",
+                  bottom: "70px",
+                  right: "375px"
+                }}
+              />
               <Grid
                 item
                 md={6}
                 style={{
                   display: "inline-block",
                   float: "right",
-                  marginTop: "10%"
+                  marginTop: "-15%",
+                  marginLeft: "10%"
                 }}
               >
-                <Stage width={100} height={100}>
+                <Stage width={1000} height={1000}>
                   <Layer>
                     {this.state.shapes.map(function(data, idx) {
                       if (data.shape === "Circle" && data.render === true) {
@@ -214,27 +254,17 @@ class FormPage extends Component {
                     }, this)}
                   </Layer>
                 </Stage>
-                <Button
-                  style={{
-                    backgroundColor: "lightGray",
-                    display: "inline-block",
-                    float: "right",
-                    marginTop: "65%",
-                    marginRight: "20%"
-                  }}
-                >
-                  Save
-                </Button>
               </Grid>
               <Grid
                 item
                 md={6}
                 style={{
-                  display: "inline-block",
-                  marginTop: "5%",
-                  marginRight: "2%",
+                  display: "flex",
+                  marginTop: "0%",
+                  marginRight: "-30%",
                   float: "right",
-                  color: "gray"
+                  color: "gray",
+                  fontSize: "50px"
                 }}
               >
                 <p>shape.</p>
@@ -242,7 +272,7 @@ class FormPage extends Component {
               <br />
               <div
                 style={{
-                  display: "inline-block",
+                  // display: "inline-block",
                   float: "left",
                   marginLeft: "5%"
                 }}
@@ -253,7 +283,8 @@ class FormPage extends Component {
                     style={{
                       textTransform: "lowercase",
                       color: "gray",
-                      fontSize: "50px"
+                      fontSize: "50px",
+                      marginTop: "135px"
                     }}
                   >
                     Select your colour.
@@ -265,7 +296,7 @@ class FormPage extends Component {
                       style={{
                         display: "inline-block",
                         float: "right",
-                        fontSize: "15px"
+                        fontSize: "35px"
                       }}
                     >
                       Colour
@@ -303,13 +334,14 @@ class FormPage extends Component {
                     style={{
                       textTransform: "lowercase",
                       color: "gray",
-                      fontSize: "50px"
+                      fontSize: "50px",
+                      marginTop: "30px"
                     }}
                   >
                     Select your sound.
                   </Button>
                   <br />
-                  <FormControl style={{ width: "200px", fontSize: "30px" }}>
+                  <FormControl style={{ width: "200px", fontSize: "35px" }}>
                     <InputLabel htmlFor="demo-controlled-open-select">
                       Sound
                     </InputLabel>
@@ -343,18 +375,19 @@ class FormPage extends Component {
               style={{
                 display: "inline-flex",
                 marginTop: "0",
-                marginLeft: "30px"
+                marginLeft: "-100px"
               }}
             >
               <Button
-                className="pulseButton"
                 style={{
-                  width: "20%",
+                  width: "200px",
                   borderRadius: "10px",
                   backgroundColor: "white",
-                  fontSize: "17px",
+                  fontSize: "50px",
+                  padding: "10px",
                   fontWeight: "bold",
-                  color: "#DE7383"
+                  color: "#DE7383",
+                  textTransform: "lowercase"
                   // marginLeft: "43%"
                 }}
                 onClick={() => this.add()}
@@ -367,6 +400,7 @@ class FormPage extends Component {
           <Instrument />
         )}
       </>
+      </div>
     );
   }
 }

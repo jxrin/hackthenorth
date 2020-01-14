@@ -4,7 +4,7 @@ Virtual piano designed to create accessible opportunities for those wanting to l
 
 ## Next Steps
 We're currently working on:
-Connecting the UI from the frontend to the backend. We hope that many users who like learning instruments at a very low cost would use our project on a daily basis!
+Connecting the UI from the frontend to the backend. We hope that many users who like learning instruments at a very low cost would use our project on a daily basis! Backend can be found at: https://github.com/jxrin/paper-music-detection
 
 ## Installation
 1. Clone the project repository
